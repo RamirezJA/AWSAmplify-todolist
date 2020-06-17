@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { API, graphqlOperation } from "aws-amplify";
 import { createTodo } from "./graphql/mutations";
 import { listTodos } from "./graphql/queries";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 
 const initialState = {
   name: "",
@@ -117,4 +118,4 @@ const styles = {
   },
 };
 
-export default App;
+export default withAuthenticator(App);
